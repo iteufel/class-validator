@@ -798,7 +798,7 @@ export class Validator {
     }
 
     /**
-     * Checks if the string represents a Valide IBAN
+     * Checks if the string represents a Valid IBAN
      */
     isIBAN(value: string): boolean {
         function mod97(str: string): number {
@@ -835,7 +835,7 @@ export class Validator {
 
     // -------------------------------------------------------------------------
     // Validation Methods: array checkers
-    // -------------------------------------------------------------------------
+    // -------------Checks if the string correctly represents a time in the format HH:MM-----------------------------------------------------------
 
     /**
      * Checks if array contains all values from the given array of values.

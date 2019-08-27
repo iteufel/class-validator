@@ -1141,7 +1141,7 @@ export function IsMilitaryTime(validationOptions?: ValidationOptions) {
 }
 
 /**
- * Checks if the string correctly represents a time in the format HH:MM
+ * Checks if the string correctly represents a valid IBAN
  */
 export function IsIBAN(validationOptions?: ValidationOptions) {
     return function (object: Object, propertyName: string) {
