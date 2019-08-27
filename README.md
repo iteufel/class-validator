@@ -852,6 +852,7 @@ validator.minLength(str, min); // Checks if the string's length is not less than
 validator.maxLength(str, max); // Checks if the string's length is not more than given number.
 validator.matches(str, pattern, modifiers); // Checks if string matches the pattern. Either matches('foo', /foo/i) or matches('foo', 'foo', 'i').
 validator.isMilitaryTime(str); // Checks if the string is a valid representation of military time in the format HH:MM.
+validator.isIBAN(str); // Checks if the string is a valid IBAN
 
 // array validation methods
 validator.arrayContains(array, values); // Checks if array contains all values from the given array of values.
@@ -939,6 +940,7 @@ validator.isInstance(value, target); // Checks value is an instance of the targe
 | `@MaxLength(max: number)`                       | Checks if the string's length is not more than given number.                                                                     |
 | `@Matches(pattern: RegExp, modifiers?: string)` | Checks if string matches the pattern. Either matches('foo', /foo/i) or matches('foo', 'foo', 'i').
 | `@IsMilitaryTime()`                             | Checks if the string is a valid representation of military time in the format HH:MM.                                         |
+| `@IsIBAN()`                                     | Checks if the string is a valid IBAN.                                         |
 | **Array validation decorators**                                                                                                                                                    |
 | `@ArrayContains(values: any[])`                 | Checks if array contains all values from the given array of values.                                                           |
 | `@ArrayNotContains(values: any[])`              | Checks if array does not contain any of the given values.                                                                        |

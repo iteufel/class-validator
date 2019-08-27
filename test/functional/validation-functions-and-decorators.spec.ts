@@ -49,6 +49,7 @@ import {
     Max,
     IsNotEmpty,
     IsMilitaryTime,
+    IsIBAN,
     ArrayNotEmpty,
     ArrayMinSize,
     ArrayMaxSize,
@@ -2915,6 +2916,30 @@ describe("IsMilitaryTime", function() {
 
     it("should fail for invalid values", function(done) {
         const invalidValues = [undefined, null, "23:00 and invalid counterpart"];
+        checkInvalidValues(new MyClass(), invalidValues, done);
+    });
+
+});
+
+describe("IsIBAN", function() {
+
+    class MyClass {
+        @IsIBAN()
+        someProperty: string;
+    }
+
+    it("should not fail for a valid time in the format HH:MM", function(done) {
+        const validValues = ["DE02120300000000202051", "AT026000000001349870", "LI0208800000017197386"];
+        checkValidValues(new MyClass(), validValues, done);
+    });
+
+    it("should fail for invalid IBAN format", function(done) {
+        const invalidValues = ["DE02200505541015871393", "AT027000000001349870", "CH0209000000100013497"];
+        checkInvalidValues(new MyClass(), invalidValues, done);
+    });
+
+    it("should fail for invalid values", function(done) {
+        const invalidValues = [undefined, null, "DE02200505501015871393 3"];
         checkInvalidValues(new MyClass(), invalidValues, done);
     });
 

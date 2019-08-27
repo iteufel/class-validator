@@ -1140,6 +1140,21 @@ export function IsMilitaryTime(validationOptions?: ValidationOptions) {
     };
 }
 
+/**
+ * Checks if the string correctly represents a time in the format HH:MM
+ */
+export function IsIBAN(validationOptions?: ValidationOptions) {
+    return function (object: Object, propertyName: string) {
+        const args: ValidationMetadataArgs = {
+            type: ValidationTypes.IS_IBAN,
+            target: object.constructor,
+            propertyName: propertyName,
+            validationOptions: validationOptions
+        };
+        getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
+    };
+}
+
 // -------------------------------------------------------------------------
 // Array checkers
 // -------------------------------------------------------------------------
